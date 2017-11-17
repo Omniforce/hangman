@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font-family: sans-serif;
+}
+
+#root {
+  position: relative;
+  overflow: hidden;
+  width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #F0F8FF;
+}
+
+.header {
+  text-align: center;
+  height: 100px;
+  margin-top: -20px;
+}
+
+.header > .title {
+  padding-top: 10px;
+}
+
+.gameInfo {
+  height: 300px;
+}
+
+.word {
+  height: 100px;
+}
