@@ -3,6 +3,8 @@ module.exports = {
   guessLetter,
 }
 
+const MAX_ATTEMPTS = 10;
+
 function getNewWord() {
   return "hangman";
 }
@@ -36,7 +38,7 @@ function replaceLettersInMask(wordMask, idxs, letter) {
 }
 
 function updateStatus(game) {
-  if (game.errorCount >= 10) {
+  if (game.errorCount < MAX_ATTEMPTS) {
     game.status.active = false;
     game.status.won = false;
   }

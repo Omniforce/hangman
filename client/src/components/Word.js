@@ -1,9 +1,17 @@
 import React from 'react';
 
-const Word = () => (
-  <div className="word">
+class Word extends React.Component {
+  render() {
+    const letters = this.props.wordMask.split('').map((letter, index) => {
+      return <div key={index} className="letter">{letter}</div>
+    });
 
-  </div>
-);
+    return (
+      <div className="word">
+        <div className="letters">{ letters }</div>
+      </div>
+    )
+  }
+}
 
 export default Word;
