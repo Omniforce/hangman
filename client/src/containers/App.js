@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import GameInfo from '../components/GameInfo';
+import Game from '../components/Game';
 import Word from '../components/Word';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <GameInfo />
+        <Game />
         <Word />
       </div>
     );

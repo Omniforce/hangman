@@ -22,8 +22,36 @@ body {
   padding-top: 10px;
 }
 
-.gameInfo {
+.game {
   height: 300px;
+}
+
+.gallows {
+  display: inline-block;
+  height: 100%;
+  width: 33%;
+}
+
+.gameInfo {
+  display: inline-block;
+  height: 100%;
+  width: 66%;
+  float: right;
+}
+
+.infoPane {
+  width: 100%;
+}
+
+.ip-title {
+  display: inline-block;
+  width: 33%;
+  float: left;
+}
+
+.ip-data {
+  display: inline-block;
+  width: 66%;
 }
 
 .word {
