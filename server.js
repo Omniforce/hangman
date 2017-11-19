@@ -14,10 +14,14 @@ app.use(session({
   saveUninitialized: true
 }));
 
-const games = require('./routes/games');
-app.use('/game', games);
+const api = require('./routes/api');
+app.use('/api', api);
 
 app.set('port', (process.env.PORT || 3001));
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.listen(app.get('port'), () => {
   console.log(`Find the server at: http://localhost:${app.get('port')}/`);

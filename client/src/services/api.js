@@ -1,19 +1,20 @@
 const { unwrap } = require('./api-helper');
 
-export const startGame = () => {
+export const getGame = () => {
   const options = {
     credentials: 'include',
   };
 
-  return fetch('/game/start', options).then(unwrap);
+  return fetch('/api/game', options).then(unwrap);
 }
 
-export const getGameStatus = () => {
+export const resetGame = () => {
   const options = {
     credentials: 'include',
+    method: 'POST',
   };
 
-  return fetch('/game/status', options).then(unwrap);
+  return fetch('/api/reset', options).then(unwrap);
 }
 
 export const guessLetter = (letter) => {
@@ -22,5 +23,5 @@ export const guessLetter = (letter) => {
     method: 'POST',
   };
 
-  return fetch('/game/' + letter, options).then(unwrap);
+  return fetch('/api/' + letter, options).then(unwrap);
 }

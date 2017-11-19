@@ -56,15 +56,16 @@ body {
 
 .word {
   height: 100px;
+  float: left;
   position: relative;
+  left: 50%;
 }
 
 .letters {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 40px;
+  float: left;
+  position: relative;
+  left: -50%;
 }
 
 .letter {
@@ -103,5 +104,5 @@ body {
 }
 
 .modalFooter {
-  margin-top: 20px; 
+  margin-top: 20px;
 }

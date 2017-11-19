@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { generateWord } = require('../../helpers/WordGenerator');
 
 const GameSchema = new mongoose.Schema({
   word: String,

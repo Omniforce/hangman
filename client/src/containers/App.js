@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { startGame, getGameStatus, guessLetter } from '../services/api';
+import { getGame, resetGame, guessLetter } from '../services/api';
 
 import GameOverModel from '../components/GameOverModal';
 import Header from '../components/Header';
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    startGame().then(game => this.updateState(game));
+    getGame().then(game => this.updateState(game));
 
     window.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   handlePlayAgainPress() {
-    startGame().then(game => this.updateState(game));
+    resetGame().then(game => this.updateState(game));
   }
 
   render() {
