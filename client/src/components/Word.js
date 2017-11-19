@@ -2,7 +2,7 @@ import React from 'react';
 
 class Word extends React.Component {
   render() {
-    const letters = this.props.wordMask.split('').map((letter, index) => {
+    const letters = this.props.wordMask.map((letter, index) => {
       return <div key={index} className="letter">{letter}</div>
     });
 

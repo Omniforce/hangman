@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font-family: sans-serif;
+  font-family: Lato;
 }
 
 #root {
@@ -70,4 +70,38 @@ body {
 .letter {
   float: left;
   margin: 0 10px;
+}
+
+.modalBackdrop {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  background-color: rgba(128,128,128,0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 150px;
+}
+
+.modal {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  opacity: 1;
+  position: relative;
+}
+
+.modalInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalFooter {
+  margin-top: 20px; 
 }
