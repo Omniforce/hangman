@@ -10,7 +10,7 @@ function getNewWord() {
 }
 
 function guessLetter(game, letter) {
-  if (game.guesses.includes(letter)) return game;
+  if (!game.status.active || game.guesses.includes(letter)) return game;
 
   if (game.word.includes(letter)) {
     const idxsToReplace = findLetterInWord(game.word, letter);
@@ -38,7 +38,7 @@ function replaceLettersInMask(wordMask, idxs, letter) {
 }
 
 function updateStatus(game) {
-  if (game.errorCount < MAX_ATTEMPTS) {
+  if (game.errorCount >= MAX_ATTEMPTS) {
     game.status.active = false;
     game.status.won = false;
   }

@@ -3,13 +3,28 @@ var router = express.Router();
 
 const { Game } = require('../models/models');
 
+router.use('/start', (req, res, next) => {
+  const gameId = req.session.gameId;
+
+  if (gameId) {
+    Game.getGame(req.session.gameId)
+      .then(game => {
+        if(game.status.active) res.json(game)
+        else next();
+      })
+      .catch(err => res.sendStatus(400));
+  } else {
+    next();
+  }
+});
+
 router.get('/start', (req, res, next) => {
   Game.createGame()
     .then(game => {
       req.session.gameId = game._id;
       res.json(game);
     })
-    .catch(err => res.send(400));
+    .catch(err => res.sendStatus(400));
 });
 
 router.get('/status', (req, res, next) => {
@@ -17,7 +32,7 @@ router.get('/status', (req, res, next) => {
 
   Game.getGame(gameId)
     .then(game => res.json(game))
-    .catch(err => res.send(400));
+    .catch(err => res.sendStatus(400));
 });
 
 router.post('/:letter', (req, res, next) => {
@@ -25,7 +40,7 @@ router.post('/:letter', (req, res, next) => {
   const letter = req.params.letter;
 
   Game.guessLetter(gameId, letter, (err, game) => {
-    if (err) res.send(400);
+    if (err) res.sendStatus(400);
     res.json(game);
   });
 });
