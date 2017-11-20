@@ -12,7 +12,8 @@
     "nconf": "^0.9.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
     "client": "node start-client.js"
   },
