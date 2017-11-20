@@ -7,7 +7,9 @@ import Stats from './Stats';
 
 const Game = (props) => (
   <div className="game">
-    <Gallows />
+    <Gallows
+      errorCount={props.errorCount}
+    />
     <div className="gameInfo">
       <Guesses
         title="Guesses"
@@ -15,7 +17,7 @@ const Game = (props) => (
       />
       <Attempts
         title="Attempts Left"
-        attemptsLeft={props.attemptsLeft}
+        errorCount={props.errorCount}
       />
       <Stats
         title="Stats"

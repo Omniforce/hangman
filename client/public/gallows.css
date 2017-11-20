@@ -1,0 +1,101 @@
+.gallows {
+  position: absolute;
+}
+
+.gallows > div {
+  background-color: black;
+  position: absolute;
+}
+
+.gallowsArm {
+  width: 150px;
+  height: 10px;
+  left: 0px;
+  top: 20px;
+}
+
+.gallowsPole {
+  width: 10px;
+  height: 30px;
+  top: 20px;
+  left: 150px;
+}
+
+.head {
+  height: 50px;
+  width: 50px;
+  border-radius:75px;
+  top: 50px;
+  left: 130px;
+}
+
+.torso {
+  height: 100px;
+  width: 5px;
+  top: 100px;
+  left: 153px;
+}
+
+.leftArm {
+  height: 60px;
+  width: 5px;
+  top: 90px;
+  left: 125px;
+  transform: rotate(-60deg);
+}
+
+.leftHand {
+  height: 20px;
+  width: 5px;
+  top: 100px;
+  left: 92px;
+  transform: rotate(60deg);
+}
+
+.rightArm {
+  height: 60px;
+  width: 5px;
+  top: 90px;
+  left: 180px;
+  transform: rotate(60deg);
+}
+
+.rightHand {
+  height: 20px;
+  width: 5px;
+  top: 100px;
+  left: 212px;
+  transform: rotate(-60deg);
+}
+
+.leftLeg {
+  height: 60px;
+  width: 5px;
+  top: 190px;
+  left: 131px;
+  transform: rotate(45deg);
+}
+
+.leftFoot {
+  height: 20px;
+  width: 5px;
+  top: 231px;
+  left: 101px;
+  transform: rotate(90deg);
+}
+
+.rightLeg {
+  height: 60px;
+  width: 5px;
+  top: 190px;
+  left: 175px;
+  transform: rotate(-45deg);
+}
+
+.rightFoot {
+  height: 20px;
+  width: 5px;
+  top: 231px;
+  left: 205px;
+  transform: rotate(-90deg);
+}

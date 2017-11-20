@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      attemptsLeft: 0,
+      errorCount: 0,
       guesses: [],
       stats: { games: 0, won: 0 },
       status: { active: true, won: null },
@@ -28,7 +28,7 @@ class App extends Component {
 
   updateState(game) {
     this.setState({
-      attemptsLeft: 10 - game.errorCount,
+      errorCount: game.errorCount,
       guesses: game.guesses,
       stats: { games: game.gamesPlayed, won: game.gamesWon },
       status: game.status,
@@ -55,7 +55,7 @@ class App extends Component {
         <Header />
         <Game
           guesses={this.state.guesses}
-          attemptsLeft={this.state.attemptsLeft}
+          errorCount={this.state.errorCount}
           stats={this.state.stats}
         />
         <Word
