@@ -1,0 +1,114 @@
+body {
+  padding: 50px;
+  font-family: Lato;
+  background-color: #00008B
+}
+
+.App {
+  position: relative;
+  overflow: hidden;
+  width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #FFF;
+  border-radius: 20px;
+}
+
+.header {
+  text-align: center;
+  height: 100px;
+  margin-top: -20px;
+}
+
+.header > .title {
+  padding-top: 10px;
+}
+
+.game {
+  height: 300px;
+}
+
+.gallows {
+  display: inline-block;
+  height: 100%;
+  width: 33%;
+}
+
+.gameInfo {
+  display: inline-block;
+  height: 100%;
+  width: 66%;
+  float: right;
+  margin-left: 20px;
+}
+
+.infoPane {
+  margin-top: 15px;
+}
+
+.ip-title {
+  display: inline-block;
+  width: 33%;
+  float: left;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.ip-data {
+  display: inline-block;
+  width: 66%;
+  font-size: 20px;
+}
+
+.word {
+  height: 100px;
+  float: left;
+  position: relative;
+  left: 50%;
+}
+
+.letters {
+  font-size: 40px;
+  float: left;
+  position: relative;
+  left: -50%;
+}
+
+.letter {
+  float: left;
+  margin: 0 10px;
+}
+
+.modalBackdrop {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  background-color: rgba(128,128,128,0.8);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 150px;
+}
+
+.modal {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  opacity: 1;
+  position: relative;
+}
+
+.modalInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalFooter {
+  margin-top: 20px;
+}
