@@ -1,8 +1,6 @@
-"use strict";
-
 const expect = require('chai').expect;
-const { newGame, closeToWin, closeToLoss, wonGame } = require('./generator');
 
+const { newGame, closeToWin, closeToLoss, wonGame } = require('./generator');
 const { guessLetter, resetGame } = require('../helpers/game-logic');
 
 describe("Game Logic", () => {
@@ -12,19 +10,23 @@ describe("Game Logic", () => {
 
       guessLetter(game, 'h');
 
-      expect(game.guesses).to.include('h');
+      expect(game.guesses).to.deep.equal(['h']);
     });
 
     it('should correctly update word mask on correct guess', () => {
       let game = newGame();
 
+      expect(game.wordMask).to.deep.equal(['_','_','_','_','_','_','_']);
+
       guessLetter(game, 'h');
 
-      expect(game.wordMask[0]).to.equal('h');
+      expect(game.wordMask).to.deep.equal(['h','_','_','_','_','_','_']);
     });
 
     it('should increase error count on incorrect guess', () => {
       let game = newGame();
+
+      expect(game.errorCount).to.equal(0);
 
       guessLetter(game, 'q');
 
@@ -34,25 +36,37 @@ describe("Game Logic", () => {
     it('should end game and mark as won when word has been guessed', () => {
       let game = closeToWin()
 
+      expect(game.status).to.deep.equal({ active: true, won: false });
+
       guessLetter(game, 'm');
 
-      expect(game.status.active).to.equal(false);
-      expect(game.status.won).to.equal(true);
+      expect(game.status).to.deep.equal({ active: false, won: true });
     });
 
     it('should end game and mark as lost when error count reaches 10', () => {
       let game = closeToLoss();
 
+      expect(game.status).to.deep.equal({ active: true, won: false });
+
       guessLetter(game, 'p');
 
-      expect(game.status.active).to.equal(false);
-      expect(game.status.won).to.equal(false);
+      expect(game.status).to.deep.equal({ active: false, won: false });
+    });
+
+    it('should not change game state if letter has already been guessed', () => {
+      let game = closeToWin();
+
+      guessLetter(game, 'h');
+
+      expect(game).to.deep.equal(closeToWin());
     });
   });
 
   describe("Reset Game", () => {
     it('should increment games played', () => {
       let game = newGame();
+
+      expect(game.gamesPlayed).to.equal(0);
 
       resetGame(game);
 
@@ -70,7 +84,10 @@ describe("Game Logic", () => {
 
     it('should increment games won if game has been won', () => {
       let game = wonGame();
-      game = resetGame(game);
+
+      expect(game.gamesWon).to.equal(0);
+
+      resetGame(game);
 
       expect(game.gamesWon).to.equal(1);
     });
