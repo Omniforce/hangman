@@ -16,3 +16,5 @@ Simple React/Node implementation of hangman.
 - `npm install`
 - `npm start`
 3. Open your favorite browser to http://localhost:3001 and enjoy! (Some of the chosen words can be pretty tough)
+
+Word list courtesy of [Dwl/English Words](https://github.com/dwyl/english-words) 
