@@ -18,3 +18,9 @@ Simple React/Node implementation of hangman.
 3. Open your favorite browser to http://localhost:3001 and enjoy! (Some of the chosen words can be pretty tough)
 
 Word list courtesy of [Dwl/English Words](https://github.com/dwyl/english-words) 
+
+## Testing
+1. To run tests, navigate to the root of the project
+- `npm test`
+
+Currently, only the core game logic has been tested. I would like to add tests for the API endpoints in the future.
