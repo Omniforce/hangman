@@ -1,4 +1,4 @@
-const { generateWord } = require('./WordGenerator');
+const { generateWord } = require('./word-generator');
 
 module.exports = {
   guessLetter,
@@ -35,6 +35,8 @@ function resetGame(game) {
   if (game.status.won) game.gamesWon += 1;
 
   game.status = { active: true, won: false };
+
+  return game;
 }
 
 // Private

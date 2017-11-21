@@ -4,7 +4,7 @@ const GameSchema = require('./game.schema');
 const Game = mongoose.model('Game', GameSchema);
 
 const gameLogic = require('../../helpers/game-logic');
-const { generateWord } = require('../../helpers/WordGenerator');
+const { generateWord } = require('../../helpers/word-generator');
 
 module.exports = {
   createGame,

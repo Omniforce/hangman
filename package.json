@@ -15,9 +15,12 @@
     "start": "node server.js",
     "": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "node start-client.js"
+    "client": "node start-client.js",
+    "test": "mocha tests"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.0",
+    "mocha": "^4.0.1"
   }
 }
