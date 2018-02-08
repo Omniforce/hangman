@@ -38,7 +38,10 @@ router.post('/:letter', (req, res, next) => {
   const letter = req.params.letter;
 
   Game.guessLetter(gameId, letter, (err, game) => {
-    if (err) res.sendStatus(400);
+    if (err)  {
+      console.log(err);
+      res.sendStatus(400);
+    }
     res.json(game);
   });
 });

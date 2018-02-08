@@ -11,6 +11,6 @@ const GameSchema = new mongoose.Schema({
     active: { type: Boolean, default: true },
     won: Boolean
   }
-});
+}, { usePushEach: true });
 
 module.exports = GameSchema;
