@@ -1,4 +1,4 @@
 {
-  "MONGO_URL": "mongodb://heroku_0r37vn5z:sccosialij4srsjdqc91ll1gs7@ds229648.mlab.com:29648/heroku_0r37vn5z",
+  "MONGO_URL": "mongodb://localhost/hangman",
   "SESSION_SECRET": "thisisasecret"
 }

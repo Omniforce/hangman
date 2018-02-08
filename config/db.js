@@ -3,4 +3,9 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
 
-mongoose.connect(nconf.get('MONGO_URL'), { useMongoClient: true });
+var connectionString = nconf.get('MONGO_URL');
+if (process.env.MONGODB_URI) {
+  connectionString = process.env.MONGODB_URI;
+}
+
+mongoose.connect(connectionString, { useMongoClient: true });
